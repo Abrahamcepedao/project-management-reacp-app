@@ -1,0 +1,14 @@
+.addProject__form{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+.addProject__formControl{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.addProject__button{
+    top: 15px;
+    margin: auto;
+}

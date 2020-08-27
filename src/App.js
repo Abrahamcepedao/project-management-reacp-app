@@ -1,10 +1,16 @@
 import React from 'react';
-import './App.css';
+import './css/App.css'
+import Header from './Header';
+import AddProject from './AddProject';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      {/* Header  with greeting */}
+      <Header />
+      {/* Button to add new project */}
+      <AddProject/>
+      {/* List of projects */}
     </div>
   );
 }
