@@ -1,18 +1,30 @@
 import React, { useState } from "react";
-import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
+import { Button, FormControl, InputLabel, Input, List } from "@material-ui/core";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import './css/Project.css'
+import Todo from "./Todo";
 
 
 function Project(props) {
     const [todo, setTodo] = useState('');
+    const [todos, setTodos] = useState('');
     const addTodo = (event) => {
         event.preventDeafult();
     }
     return (
       <div className="project">
+        {/* Project title */}
         <h3>{props.projectTitle}</h3>
+
         {/* list of todos */}
+        <List>
+          {/* map todos */}
+          {[1, 2, 3, 4].map((value) => (
+            <Todo key={`Item ${value}`} value={`Item ${value}`}/>
+          ))}
+        </List>
+
+        {/* Todo input */}
         <form className="project__form">
           <FormControl className="project__formControl">
             <InputLabel>Enter todo</InputLabel>
@@ -29,7 +41,7 @@ function Project(props) {
             onClick={addTodo}
             className="project__button"
           >
-            <ArrowForwardIcon className="project__arrowIcon"/>
+            <ArrowForwardIcon className="project__arrowIcon" />
           </Button>
         </form>
       </div>
