@@ -1,0 +1,25 @@
+.project{
+    position: relative;
+    background: linear-gradient(135deg, rgb(52, 142, 226)0%, rgb(44, 161, 172)100%);
+    max-width: 600px;
+    margin: 25px auto 25px auto;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project__form{
+    display: flex;
+    
+}
+.project__formControl{
+    flex: 1;
+}
+.project__button{
+    flex: 0;
+    color: white;
+}
+.project__arrowIcon{
+    color: white;
+}
