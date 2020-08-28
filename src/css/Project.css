@@ -18,8 +18,5 @@
 }
 .project__button{
     flex: 0;
-    color: white;
-}
-.project__arrowIcon{
-    color: white;
+    margin-left: 10px !important;
 }
