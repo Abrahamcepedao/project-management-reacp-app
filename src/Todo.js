@@ -2,8 +2,9 @@ import React from 'react';
 import { ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from "@material-ui/core";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
-import CommentIcon from "@material-ui/icons/Comment";
+import DeleteIcon from '@material-ui/icons/Delete';
 import './css/Todo.css';
+import { db } from './firebase';
 
 function Todo(props) {
     const [checked, setChecked] = React.useState([0]);
@@ -21,6 +22,10 @@ function Todo(props) {
       setChecked(newChecked);
     };
 
+    const deleteTodo = () => {
+      db.collection("projects").doc(props.projectId).collection("todos").doc(props.todoId).delete();
+    };
+
     return (
       <ListItem onClick={handleToggle(props.value)}>
         <ListItemIcon>
@@ -33,8 +38,8 @@ function Todo(props) {
         </ListItemIcon>
         <ListItemText primary={props.value} />
         <ListItemSecondaryAction>
-          <IconButton edge="end" aria-label="comments">
-            <CommentIcon />
+          <IconButton edge="end" onClick={deleteTodo}>
+            <DeleteIcon />
           </IconButton>
         </ListItemSecondaryAction>
       </ListItem>

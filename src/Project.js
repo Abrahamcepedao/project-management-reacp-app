@@ -42,7 +42,7 @@ function Project(props) {
         <List>
           {/* map todos */}
           {todos.map((todo) => (
-            <Todo key={todo.id} value={todo.todo}/>
+            <Todo key={todo.id} value={todo.todo} todoId={todo.id} projectId={props.projectID}/>
           ))}
         </List>
 
