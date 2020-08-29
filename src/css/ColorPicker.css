@@ -1,0 +1,33 @@
+.colorPicker__container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 80%;
+    height: 50px;
+    margin: 30px auto 30px auto;
+    background: rgb(246, 246, 255);
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+.colorPicker__Button{
+    width: 50px;
+    min-width: 50px !important;
+    height: 50px;
+    border-radius: 50px !important;
+}
+.button1{
+    background-color: #D7263D !important;
+}
+.button2{
+    background-color: #F46036 !important;
+}
+.button3{
+    background-color: #009FB7 !important;
+}
+.button4{
+    background-color: #4392F1 !important;
+}
+.button5{
+    background-color: #129490!important;
+}

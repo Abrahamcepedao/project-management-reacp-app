@@ -1,6 +1,6 @@
 .project{
     position: relative;
-    background: linear-gradient(135deg, rgb(52, 142, 226)0%, rgb(44, 161, 172)100%);
+    background-color: rgb(246, 246, 255);
     max-width: 600px;
     margin: 25px auto 25px auto;
     padding: 10px 20px 10px 20px;
