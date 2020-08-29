@@ -50,7 +50,7 @@ function App() {
       <AddProject />
       {/* List of projects */}
       {projects.map((project) => (
-        <Project key={project.id} projectTitle={project.project} projectID={project.id}/>
+        <Project key={project.id} projectTitle={project.project} projectID={project.id} color={color}/>
       ))}
     </div>
   );

@@ -10,9 +10,9 @@ import { db } from './firebase';
 
 const MyCheckbox = withStyles({
   root: {
-    color: 'white',
+    color: 'gray',
     '&$checked': {
-      color: 'white',
+      color: 'gray',
     },
   },
   checked: {},
@@ -39,7 +39,7 @@ function Todo(props) {
     };
 
     return (
-      <ListItem onClick={handleToggle(props.value)}>
+      <ListItem onClick={handleToggle(props.value)} className="todo_item">
         <ListItemIcon>
           <MyCheckbox edge="start" checked={checked.indexOf(props.value) !== -1} tabIndex={-1}/>
           {/* <Checkbox

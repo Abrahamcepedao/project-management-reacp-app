@@ -36,7 +36,7 @@ function Project(props) {
     return (
       <div className="project">
         {/* Project title */}
-        <h3>{props.projectTitle}</h3>
+        <h3 style={{color: props.color}}>{props.projectTitle}</h3>
 
         {/* list of todos */}
         <List>
@@ -63,7 +63,7 @@ function Project(props) {
             onClick={addTodo}
             className="project__button"
           >
-            Add todo{/* <ArrowForwardIcon className="project__arrowIcon" /> */}
+            <ArrowForwardIcon className="project__arrowIcon" />
           </Button>
         </form>
       </div>
