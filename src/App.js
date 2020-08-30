@@ -4,7 +4,6 @@ import { db } from "./firebase";
 import Header from './Header';
 import AddProject from './AddProject';
 import Project from './Project';
-import ColorPicker from './ColorPicker';
 import { Button } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import './css/ColorPicker.css'
