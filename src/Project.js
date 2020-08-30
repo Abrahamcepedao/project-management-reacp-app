@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
 import firebase from "firebase";
-import { Button, FormControl, InputLabel, Input, List, TextField } from "@material-ui/core";
+import { Button, FormControl, List, TextField } from "@material-ui/core";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from '@material-ui/icons/Delete';
 import './css/Project.css'
 import Todo from "./Todo";
 import { withStyles } from '@material-ui/core/styles';
@@ -47,11 +49,21 @@ function Project(props) {
       setTodo("");
     };
 
+    const deleteProject = () => {
+        db.collection("projects").doc(props.projectID).delete();
+    }
+
 
     return (
       <div className="project">
         {/* Project title */}
-        <h3 style={{color: props.color}}>{props.projectTitle}</h3>
+        <div className="project__header">
+          <h3 className="project__title" style={{ color: props.color }}>{props.projectTitle}</h3>
+          <IconButton edge="end" onClick={deleteProject}>
+            <DeleteIcon />
+          </IconButton>
+        </div>
+        
 
         {/* list of todos */}
         <List>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction } from "@material-ui/core";
 import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from '@material-ui/icons/Delete';

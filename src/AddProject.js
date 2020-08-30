@@ -33,7 +33,7 @@ function AddProject() {
       <div>
         <form className="addProject__form">
           <FormControl className="addProject__formControl">
-            <MyTextField id="custom-css-standard-input" label="Type todo" value={project} onChange={(event) => setProject(event.target.value)} />
+            <MyTextField id="custom-css-standard-input" label="Type project" value={project} onChange={(event) => setProject(event.target.value)} />
             {/* <InputLabel>Enter project</InputLabel>
             <Input
                 value={project}

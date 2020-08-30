@@ -8,10 +8,16 @@
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.15);
 }
-
+.project__header{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+.project__title{
+    flex: 1;
+    text-align: left;
+}
 .project__form{
     display: flex;
-    
 }
 .project__formControl{
     flex: 1;
