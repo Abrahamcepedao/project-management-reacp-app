@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
 import { db } from "./firebase";
 import firebase from "firebase";
-import { Button, FormControl, InputLabel, Input } from "@material-ui/core";
+import { Button, FormControl, InputLabel, Input, TextField } from "@material-ui/core";
+import { withStyles } from '@material-ui/core/styles';
 import './css/AddProject.css'
+
+const MyTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: 'white',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'white',
+    },
+
+  }
+})(TextField);
 
 function AddProject() {
     const [project, setProject] = useState('');
@@ -20,11 +33,12 @@ function AddProject() {
       <div>
         <form className="addProject__form">
           <FormControl className="addProject__formControl">
-            <InputLabel>Enter project</InputLabel>
+            <MyTextField id="custom-css-standard-input" label="Type todo" value={project} onChange={(event) => setProject(event.target.value)} />
+            {/* <InputLabel>Enter project</InputLabel>
             <Input
                 value={project}
                 onChange={event => setProject(event.target.value)}
-            ></Input>
+            ></Input> */}
           </FormControl>
           <Button
             disabled={!project}
@@ -33,6 +47,10 @@ function AddProject() {
             color="primary"
             onClick={addProject}
             className="addProject__button"
+            style={{
+              background: 'white',
+              color: 'black'
+            }}
           >
             Add project
           </Button>

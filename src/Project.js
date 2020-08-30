@@ -1,16 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { db } from "./firebase";
 import firebase from "firebase";
-import { Button, FormControl, InputLabel, Input, List } from "@material-ui/core";
+import { Button, FormControl, InputLabel, Input, List, TextField } from "@material-ui/core";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import './css/Project.css'
 import Todo from "./Todo";
+import { withStyles } from '@material-ui/core/styles';
+
+
+const MyTextField = withStyles({
+  root: {
+    '& label.Mui-focused': {
+      color: 'black',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'black',
+    },
+    
+  }
+})(TextField);
+
 
 
 function Project(props) {
     const [todo, setTodo] = useState('');
     const [todos, setTodos] = useState([]);
-    
+
     useEffect(() => {
       db.collection('projects')
         .doc(props.projectID)
@@ -49,11 +64,13 @@ function Project(props) {
         {/* Todo input */}
         <form className="project__form">
           <FormControl className="project__formControl">
-            <InputLabel>Enter todo</InputLabel>
-            <Input
+            <MyTextField id="custom-css-standard-input" label="Type todo" defaultValue={todo} onChange={(event) => setTodo(event.target.value)}/>
+            {/* <InputLabel>Enter todo</InputLabel> */}
+            {/* <TextField id="standard-basic" label="Enter todo" value={todo} onChange={(event) => setTodo(event.target.value)}/> */}
+            {/* <Input
               value={todo}
               onChange={(event) => setTodo(event.target.value)}
-            ></Input>
+            ></Input> */}
           </FormControl>
           <Button
             disabled={!todo}
@@ -62,6 +79,9 @@ function Project(props) {
             color="primary"
             onClick={addTodo}
             className="project__button"
+            style={{
+              backgroundColor: props.color,
+            }}
           >
             <ArrowForwardIcon className="project__arrowIcon" />
           </Button>
